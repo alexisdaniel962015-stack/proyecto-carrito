@@ -1,1 +1,88 @@
 @import url(../styles.config.css);
+
+main {
+    padding: 2rem 5%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+main h1 {
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+#productosCarrito {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Estilos para los elementos que el JS inyectará (asumiendo estructura similar a productos) */
+.cart-item {
+    background-color: var(--bg-color);
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-soft);
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    transition: box-shadow 0.3s ease;
+}
+
+.cart-item:hover {
+    box-shadow: var(--shadow-medium);
+}
+
+.cart-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
+
+.cart-item-info {
+    flex: 1;
+}
+
+.cart-item-info h4 {
+    color: var(--primary-color);
+    margin-bottom: 0.3rem;
+}
+
+.cart-item-info p {
+    color: var(--text-light);
+    font-weight: 600;
+}
+
+.cart-item button {
+    padding: 8px 15px;
+    background-color: #ff4d4d; /* Color de error/borrar, pero podemos usar un tono de azul si se prefiere */
+    color: white;
+    border-radius: var(--radius);
+    font-weight: 600;
+    font-size: 0.85rem;
+}
+
+.cart-item button:hover {
+    background-color: #cc0000;
+}
+
+/* Botón de finalizar compra (si existe o se añade) */
+.checkout-btn {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    margin: 3rem auto 0 auto;
+    padding: 15px;
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    border-radius: var(--radius);
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.checkout-btn:hover {
+    background-color: var(--primary-hover);
+}

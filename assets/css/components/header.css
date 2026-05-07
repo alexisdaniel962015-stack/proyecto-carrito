@@ -1,8 +1,55 @@
+/* Header minimalista con sombra suave para profundidad */
 header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 1em;
-    box-shadow: 0 0 10px rgb(216, 216, 216);
-    padding: 1em;
+    padding: 1rem 5%;
+    background-color: var(--bg-color);
+    box-shadow: var(--shadow-soft);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    margin-bottom: 2rem;
+}
+
+/* Logotipo en Azul Presidencial negrita */
+header h3 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Navegación con efectos de hover elegantes */
+header nav {
+    display: flex;
+    gap: 2rem;
+}
+
+
+header nav a {
+    font-weight: 500;
+    color: var(--text-color);
+    position: relative;
+    padding: 0.5rem 0;
+}
+
+header nav a:hover {
+    color: var(--primary-color);
+}
+
+header nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+header nav a:hover::after {
+    width: 100%;
 }

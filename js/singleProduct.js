@@ -1,23 +1,17 @@
 const API = 'https://dummyjson.com/products'
 
-// obteniendo el ID que se pasa de
-// una página a otra
-
-// window.location.search - la barra de busqueda
 const params = new URLSearchParams(window.location.search)
 const id = params.get('id')
 
-// obtener el producto
 const getProduct = async () => {
     const consulta = await fetch(`${API}/${id}`)
-    // https://dummyjson.com/products/3
     const data = await consulta.json()
 
     console.log(data)
 
     return data
 }
-// renderizar el producto
+
 const renderSingleProduct = async () => {
     const product = await getProduct()
 
@@ -43,6 +37,25 @@ const renderSingleProduct = async () => {
     })
 
     singleProductDescription.appendChild(price)
+
+    // ── Navegación entre productos ──
+    const actualId = Number(id)
+
+    if (actualId > 1) {
+        const btnPrev = document.createElement('button')
+        btnPrev.textContent = '← Anterior'
+        btnPrev.addEventListener('click', () => {
+            window.location.href = `?id=${actualId - 1}`
+        })
+        singleProductDescription.appendChild(btnPrev)
+    }
+
+    const btnNext = document.createElement('button')
+    btnNext.textContent = 'Siguiente →'
+    btnNext.addEventListener('click', () => {
+        window.location.href = `?id=${actualId + 1}`
+    })
+    singleProductDescription.appendChild(btnNext)
 }
 
 renderSingleProduct()

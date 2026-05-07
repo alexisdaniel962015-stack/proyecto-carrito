@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/pages/products.css">
-    <title>Productos</title>
+    <title>Productos | Mi tienda</title>
 </head>
 
 <body>
@@ -14,20 +14,26 @@
         <nav>
             <a href="">Productos</a>
             <a href="./pages/carrito.html">Carrito</a>
+            <a href="./pages/login.html">Mi cuenta</a>
         </nav>
     </header>
+
 
     <!-- Laboratorio 1 del módulo 4 -->
     <!-- Agrega un input y un botón para buscar -->
     <!-- Al dar click, lo que se escriba en el input se buscó en los productos -->
 
-    <main id="productsList">
+    <main>
         <div id="buscar">
             <input type="text" id="inputBuscar" placeholder="Buscar producto"/>
             <button id="btnBuscar">Buscar</button>
-           
+        </div>
+
+        <div id="productsList">
+            <!-- Los productos se cargarán aquí dinámicamente -->
         </div>
     </main>
+
     <script src="./js/products.js" type="module"></script>
 </body>
 
